@@ -1,18 +1,83 @@
-public class CommunityProject {
-    // 1. write 3 instance variables for class: private type variableName;
-
-    // 2. Add a constructor with 3 parameters to set all of the instance variables to the given parameters.
-
+import java.util.ArrayList;
+import java.util.List;
+public class Microwave// Add your class name here!
+{
+    //instance variables
+    private int wattage;
+    private double efficiency;
+    private int preferredFoodOrDrinkTemperature;
+    //constructor with parameters 
+    public Microwave(int uno,double dos,int tres){
+        wattage=uno;
+        efficiency=dos;
+        preferredFoodOrDrinkTemperature=tres;
+    }
     // 3. Write a print() method that uses System.out.println to print out all the instance variables.
-
+    public void print(){
+        System.out.println(
+            "Your microwave:\n"+
+            "Wattage: "+wattage+" watts\n"+
+            "Efficiency: "+efficiency+"%\n"+
+            "Your preferred temperature: "+wattage+"°F"
+        );
+    }
     // 4. Create accessor (get) methods for each of the instance variables.
-
+    public int getWattage(){
+        return wattage;
+    }
+    public double getEfficiency(){
+        return efficiency;
+    }
+    public int getTemp(){
+        return preferredFoodOrDrinkTemperature;
+    }
     // 5. Create mutator (set) methods for each of the instance variables.
-
+    public void setWattage(int t){
+        wattage=t;
+    }
+    public void setEfficiency(double t){
+        efficiency=t;
+    }
+    public void setTemp(int t){
+        preferredFoodOrDrinkTemperature=t;
+    }
     // 6. Create a toString() method that returns all the information in the instance variables.
-
-    // 7. Write an additional method for your class that takes a parameter. For example, there could be a print method with arguments that indicate how you want to print out the information, e.g. print(format) could print the data according to an argument that is "plain" or "table" where the data is printed in a table drawn with dashes (-) and lines (|).
-
-    // 8. Write a main method that constructs at least 2 objects of your class using the constructor and then calls all of the methods that you created above to test them.
-
+    public String toString(){return wattage+String.valueOf(efficiency)+String.valueOf(preferredFoodOrDrinkTemperature);}
+    // 7. Write an additional method for your class that takes a parameter.
+    // For example, there could be a print method with arguments that indicate how you want to print out
+    // the information, e.g. print(format) could print the data according to an argument that is "plain"
+    // or "table" where the data is printed in a table drawn with dashes and lines (|).
+    public void table(){
+        int deltaTempC=((preferredFoodOrDrinkTemperature-32)*5/9)-20;
+        List<String> entries = new ArrayList<>();
+        entries.add("Tea");
+        List<Integer> massesG = new ArrayList<>();
+        massesG.add(550);
+        List<Integer> inThisHouseholdWeObeyTheLawsOfThermodynamics = new ArrayList<>();
+        inThisHouseholdWeObeyTheLawsOfThermodynamics.add(4186);
+        System.out.println("thing|tim|watthours  ");
+        System.out.println(" ____________________");
+        for(int x=0;x<entries.size();x++){
+        int temp=4-(entries.get(x)).length();
+            String tempstr = "";
+            for(int y=temp;y>0;y--){
+                tempstr += " ";
+            }
+            int predsecs=(int)(((massesG.get(x)/1000.0)*inThisHouseholdWeObeyTheLawsOfThermodynamics.get(x)*deltaTempC)/wattage*efficiency);
+            String StringvalueOfwattagepredsecs3600 = String.valueOf(wattage*(predsecs/3600.0));
+            System.out.println("|"+entries.get(x)+tempstr+"|"+(predsecs/60)+":"+(predsecs%60)+"|"+StringvalueOfwattagepredsecs3600.substring(0,Math.min(StringvalueOfwattagepredsecs3600.length(),10))+"|");
+        }
+        System.out.println("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
+    }
+    // 8. Write a main method that constructs at least 2 objects of your class
+    // using the constructor and then calls all of the methods that you created above to test them.
+    public static void main(String[] args)
+    {
+       // Construct 2 objects of your class using the constructor with different values
+        Microwave m= new Microwave(1000,0.75,100);
+        Microwave l= new Microwave(1,0.1,100);
+       // call all of the objects methods to test them
+        m.table();
+        l.table();
+    }
 }
