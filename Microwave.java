@@ -67,17 +67,8 @@ public class Microwave// Add your class name here!
             String StringvalueOfwattagepredsecs3600 = String.valueOf(wattage*(predsecs/3600.0));
             System.out.println("|"+entries.get(x)+tempstr+"|"+(predsecs/60)+":"+(predsecs%60)+"|"+StringvalueOfwattagepredsecs3600.substring(0,Math.min(StringvalueOfwattagepredsecs3600.length(),10))+"|");
         }
-        System.out.println("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-    }
+        System.out.println(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
+    }}
     // 8. Write a main method that constructs at least 2 objects of your class
     // using the constructor and then calls all of the methods that you created above to test them.
-    public static void main(String[] args)
-    {
-       // Construct 2 objects of your class using the constructor with different values
-        Microwave m= new Microwave(1000,0.75,100);
-        Microwave l= new Microwave(1,0.1,100);
-       // call all of the objects methods to test them
-        m.table();
-        l.table();
-    }
-}
+    
