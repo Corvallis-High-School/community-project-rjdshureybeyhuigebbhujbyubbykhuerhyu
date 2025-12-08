@@ -7,5 +7,13 @@ public class Main{
         // call all of the objects methods to test them
             m.table();
             l.table();
-    }
+            System.out.println(m);
+            System.out.println(m.getWattage());
+            m.setWattage(6565);
+            m.setEfficiency(1);
+            m.setTemp(5);
+            System.out.println(m.getEfficiency());
+            System.out.println(m.getTemp());
+            l.print();
+        }
 }
