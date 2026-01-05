@@ -42,7 +42,7 @@ public class Microwave// Add your class name here!
         preferredFoodOrDrinkTemperature=t;
     }
     // 6. Create a toString() method that returns all the information in the instance variables.
-    public String toString(){return wattage+String.valueOf(efficiency)+String.valueOf(preferredFoodOrDrinkTemperature);}
+    public String toString(){return wattage+" "+String.valueOf(efficiency)+" "+String.valueOf(preferredFoodOrDrinkTemperature);}
     // 7. Write an additional method for your class that takes a parameter.
     // For example, there could be a print method with arguments that indicate how you want to print out
     // the information, e.g. print(format) could print the data according to an argument that is "plain"

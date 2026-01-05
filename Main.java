@@ -14,6 +14,10 @@ public class Main{
             m.setTemp(5);
             System.out.println(m.getEfficiency());
             System.out.println(m.getTemp());
+            System.out.println(m.getWattage());
             l.print();
+            System.out.println();
+            System.out.println(l);
+            
         }
 }
