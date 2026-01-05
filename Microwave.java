@@ -47,14 +47,17 @@ public class Microwave// Add your class name here!
     // For example, there could be a print method with arguments that indicate how you want to print out
     // the information, e.g. print(format) could print the data according to an argument that is "plain"
     // or "table" where the data is printed in a table drawn with dashes and lines (|).
-    public void table(){
+    public void table(String customEntry, int customMass, int customThermodynamics){
         int deltaTempC=((preferredFoodOrDrinkTemperature-32)*5/9)-20;
         List<String> entries = new ArrayList<>();
         entries.add("Tea");
+        entries.add(customEntry);
         List<Integer> massesG = new ArrayList<>();
         massesG.add(550);
+        massesG.add(customMass);
         List<Integer> inThisHouseholdWeObeyTheLawsOfThermodynamics = new ArrayList<>();
         inThisHouseholdWeObeyTheLawsOfThermodynamics.add(4186);
+        inThisHouseholdWeObeyTheLawsOfThermodynamics.add(customThermodynamics);
         System.out.println("thing|tim|watthours  ");
         System.out.println(" ____________________");
         for(int x=0;x<entries.size();x++){
@@ -66,6 +69,7 @@ public class Microwave// Add your class name here!
             int predsecs=(int)(((massesG.get(x)/1000.0)*inThisHouseholdWeObeyTheLawsOfThermodynamics.get(x)*deltaTempC)/wattage*efficiency);
             String StringvalueOfwattagepredsecs3600 = String.valueOf(wattage*(predsecs/3600.0));
             System.out.println("|"+entries.get(x)+tempstr+"|"+(predsecs/60)+":"+(predsecs%60)+"|"+StringvalueOfwattagepredsecs3600.substring(0,Math.min(StringvalueOfwattagepredsecs3600.length(),10))+"|");
+            if(x!=entries.size()-1){System.out.println(" ————————————————————");}
         }
         System.out.println(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
     }}

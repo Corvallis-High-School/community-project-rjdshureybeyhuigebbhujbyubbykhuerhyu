@@ -5,8 +5,8 @@ public class Main{
             Microwave m= new Microwave(1000,0.75,100);
             Microwave l= new Microwave(1,0.1,100);
         // call all of the objects methods to test them
-            m.table();
-            l.table();
+            m.table("rocks",200,3000);
+            l.table("stones",3141,5926);
             System.out.println(m);
             System.out.println(m.getWattage());
             m.setWattage(6565);
