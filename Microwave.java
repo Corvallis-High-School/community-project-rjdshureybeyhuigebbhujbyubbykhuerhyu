@@ -18,7 +18,7 @@ public class Microwave// Add your class name here!
             "Your microwave:\n"+
             "Wattage: "+wattage+" watts\n"+
             "Efficiency: "+efficiency+"%\n"+
-            "Your preferred temperature: "+wattage+"°F"
+            "Your preferred temperature: "+preferredFoodOrDrinkTemperature+"°F"
         );
     }
     // 4. Create accessor (get) methods for each of the instance variables.
